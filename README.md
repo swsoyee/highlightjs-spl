@@ -1,4 +1,4 @@
-# highlighths-spl - a grammar file for Splunk search processing language
+# Splunk Search Processing Language for [highlight.js](https://highlightjs.org/)
 
 ## Usage
 
@@ -52,4 +52,4 @@ Wei Su <swsoyee@gmail.com>
 - The `highlight.js` GitHub project: <https://github.com/highlightjs/highlight.js>
 - Learn more about Splunk search processing language: <https://docs.splunk.com/Splexicon:SPL>
 
-[1]: https://github.com/highlightjs/highlightjs-robots-txt/blob/master/LICENSE
+[1]: https://github.com/swsoyee/highlightjs-spl/blob/master/LICENSE
