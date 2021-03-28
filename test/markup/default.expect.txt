@@ -1,0 +1,12 @@
+index=<span class="hljs-string">&quot;tutorialdata_access&quot;</span> <span class="hljs-comment">// load dataset</span>
+<span class="hljs-operator">|</span> <span class="hljs-built_in">reverse</span>
+<span class="hljs-operator">|</span> <span class="hljs-built_in">streamstats</span> current=f global=f window=<span class="hljs-number">1</span> <span class="hljs-function"><span class="hljs-keyword">first</span>(</span>bytes) <span class="hljs-keyword">as</span> pre_bytes <span class="hljs-keyword">by</span> JSESSIONID
+<span class="hljs-operator">|</span> <span class="hljs-built_in">eval</span> diff_bytes=<span class="hljs-function"><span class="hljs-keyword">abs</span>(</span>bytes-pre_bytes)
+<span class="hljs-operator">|</span> <span class="hljs-built_in">fillnull</span> value=<span class="hljs-string">&quot;NULL&quot;</span> action
+<span class="hljs-operator">|</span> <span class="hljs-built_in">reverse</span>
+<span class="hljs-operator">|</span> <span class="hljs-built_in">filldown</span> diff_bytes
+<span class="hljs-operator">|</span> <span class="hljs-built_in">eventstats</span> count <span class="hljs-keyword">by</span> JSESSIONID
+<span class="hljs-operator">|</span> <span class="hljs-built_in">eval</span> diff_bytes=<span class="hljs-function"><span class="hljs-keyword">if</span>(</span>count==<span class="hljs-number">1</span>, <span class="hljs-function"><span class="hljs-keyword">null</span>(</span>), diff_bytes)
+<span class="hljs-operator">|</span> <span class="hljs-built_in">eventstats</span> <span class="hljs-function"><span class="hljs-keyword">mean</span>(</span>diff_bytes) <span class="hljs-keyword">as</span> mean_diff_bytes
+<span class="hljs-operator">|</span> <span class="hljs-built_in">eval</span> diff_bytes=<span class="hljs-function"><span class="hljs-keyword">if</span>(</span><span class="hljs-function"><span class="hljs-keyword">isnull</span>(</span>diff_bytes), mean_diff_bytes, diff_bytes)
+<span class="hljs-operator">|</span> <span class="hljs-built_in">table</span> _time JSESSIONID action count mean_diff_bytes diff_bytes

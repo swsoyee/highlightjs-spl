@@ -1,0 +1,12 @@
+index="tutorialdata_access" // load dataset
+| reverse
+| streamstats current=f global=f window=1 first(bytes) as pre_bytes by JSESSIONID
+| eval diff_bytes=abs(bytes-pre_bytes)
+| fillnull value="NULL" action
+| reverse
+| filldown diff_bytes
+| eventstats count by JSESSIONID
+| eval diff_bytes=if(count==1, null(), diff_bytes)
+| eventstats mean(diff_bytes) as mean_diff_bytes
+| eval diff_bytes=if(isnull(diff_bytes), mean_diff_bytes, diff_bytes)
+| table _time JSESSIONID action count mean_diff_bytes diff_bytes
