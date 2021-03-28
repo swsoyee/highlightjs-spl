@@ -1,0 +1,14 @@
+{
+  "name": "highlightjs-spl",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Wei Su",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1"
+  }
+}
