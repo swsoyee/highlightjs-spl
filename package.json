@@ -1,9 +1,26 @@
 {
   "name": "highlightjs-spl",
   "version": "0.1.0",
-  "main": "index.js",
-  "author": "Wei Su",
+  "description": "highlight.js syntax definition for the Splunk search processing language (SPL).",
+  "main": "src/spl.js",
+  "author": "Wei Su <swsoyee@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swsoyee/highlightjs-spl.git"
+  },
+  "keywords": [
+    "splunk",
+    "search processing language",
+    "spl",
+    "highlight.js",
+    "highlightjs",
+    "syntax"
+  ],
+  "bugs": {
+    "url": "https://github.com/swsoyee/highlightjs-spl/issues"
+  },
+  "homepage": "https://github.com/swsoyee/highlightjs-spl",
   "devDependencies": {
     "eslint": "^7.23.0",
     "eslint-config-standard": "^16.0.2",
