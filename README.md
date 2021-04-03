@@ -1,5 +1,7 @@
 # Splunk Search Processing Language for [highlight.js](https://highlightjs.org/)
 
+[![npm version](https://img.shields.io/npm/v/highlightjs-spl?color=success)](https://www.npmjs.com/package/highlightjs-spl) ![license](https://img.shields.io/github/license/swsoyee/highlightjs-spl) ![jsDelivr](https://img.shields.io/jsdelivr/gh/hy/swsoyee/highlightjs-spl?color=blue&label=jsDelivr)
+
 ## Usage
 
 Simply include the `highlight.js` library in your webpage or Node app, then load this module.
@@ -16,11 +18,24 @@ Simply load the module after loading `highlight.js`.  You'll use the minified ve
 </script>
 ```
 
-### [WIP] Using directly from the UNPKG CDN
+### Using directly from the CDN
+
+**jsDelivr**
 
 ```html
-<!-- <script type="text/javascript"
-  src="https://unpkg.com/highlightjs-spl@0.1.0/dist/spl.min.js"></script> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/styles/default.min.css">
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/highlight.min.js"></script>
+<!-- load syntax definition for Splunk search processing language -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/swsoyee/highlightjs-spl/dist/spl.min.js"></script>
+```
+
+**unpkg**
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.7.1/styles/default.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.1/highlight.min.js"></script>
+<!-- load syntax definition for Splunk search processing language -->
+<script type="text/javascript" src="https://unpkg.com/highlightjs-spl/dist/spl.min.js"></script>
 ```
 
 - More info: <https://unpkg.com>
