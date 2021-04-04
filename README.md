@@ -1,4 +1,4 @@
-# Splunk Search Processing Language for [highlight.js](https://highlightjs.org/)
+# ✨ Splunk Search Processing Language for [highlight.js](https://highlightjs.org/)
 
 [![npm version](https://img.shields.io/npm/v/highlightjs-spl?color=success&logo=npm)](https://www.npmjs.com/package/highlightjs-spl) ![license](https://img.shields.io/github/license/swsoyee/highlightjs-spl) ![jsDelivr](https://img.shields.io/jsdelivr/gh/hy/swsoyee/highlightjs-spl?color=blue&label=jsDelivr&logo=jsDelivr)
 
