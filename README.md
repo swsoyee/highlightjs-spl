@@ -2,6 +2,8 @@
 
 [![npm version](https://img.shields.io/npm/v/highlightjs-spl?color=success&logo=npm)](https://www.npmjs.com/package/highlightjs-spl) ![license](https://img.shields.io/github/license/swsoyee/highlightjs-spl) ![jsDelivr](https://img.shields.io/jsdelivr/gh/hy/swsoyee/highlightjs-spl?color=blue&label=jsDelivr&logo=jsDelivr)
 
+![exmaple](./docs/image.png)
+
 ## Usage
 
 Simply include the `highlight.js` library in your webpage or Node app, then load this module.
