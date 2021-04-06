@@ -5,7 +5,41 @@ Description: language definition for Splunk search processing language (SPL)
 Category: enterprise
 */
 
-import * as regex from '../lib/regex.js';
+// === Start ===
+// Functions from highlight.js/lib/regex.js
+// Source: https://github.com/highlightjs/highlight.js/blob/main/src/lib/regex.js
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function source(re) {
+  if (!re) return null;
+  if (typeof re === "string") return re;
+
+  return re.source;
+}
+
+/**
+ * @param {...(RegExp | string) } args
+ * @returns {string}
+ */
+function concat(...args) {
+  const joined = args.map((x) => source(x)).join("");
+  return joined;
+}
+
+/**
+ * Any of the passed expresssions may match
+ *
+ * Creates a huge this | this | that | that match
+ * @param {(RegExp | string)[] } args
+ * @returns {string}
+ */
+function either(...args) {
+  const joined = '(' + args.map((x) => source(x)).join("|") + ")";
+  return joined;
+}
+// === End ===
 
 /** @type LanguageFn */
 export default function(hljs) {
@@ -137,7 +171,7 @@ export default function(hljs) {
 
   const FUNCTION_CALL = {
     className: 'function',
-    begin: regex.concat(/\b/, regex.either(...FUNCTIONS), /\s*\(/),
+    begin: concat(/\b/, either(...FUNCTIONS), /\s*\(/),
     keywords: {
       keyword: FUNCTIONS
     }
