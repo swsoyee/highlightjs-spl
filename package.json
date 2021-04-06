@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-spl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "highlight.js syntax definition for the Splunk search processing language (SPL).",
   "main": "src/languages/spl.js",
   "scripts": {
@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/swsoyee/highlightjs-spl/issues"
   },
-  "homepage": "https://github.com/swsoyee/highlightjs-spl"
+  "homepage": "https://github.com/swsoyee/highlightjs-spl",
+  "files": [
+    "dist",
+    "src"
+  ]
 }
